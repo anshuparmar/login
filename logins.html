@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <script src="jquery-3.6.0.min.js"></script>
+    <!----<title>Login Form Design | CodeLab</title>---->
+    <link rel="stylesheet" href="login.css">
+    <script>
+        $(document).ready(function() {
+            $('#loginform').submit(function() {
+                var username = $('#username').val();
+                var password = $('#password').val();
+                if (username == "" || password == "")
+
+                {
+                    alert("username or password cannot be empty");
+                    return false;
+                }
+
+            });
+        });
+    </script>
+</head>
+
+<body style="background-image:url(as.jpg)">
+    <div class="wrapper">
+        <div class="title">Login Form</div>
+        <form action="/login/login.html" method="get" id="loginform">
+            <div class="field">
+                <input type="text" id="username">
+                <label>Email Address</label>
+            </div>
+            <div class="field">
+                <input type="password" id="password">
+                <label>Password</label>
+            </div>
+            <div class="content">
+                <div class="checkbox">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Remember me</label>
+                </div>
+                <div class="pass-link"><a href="#">Forgot password?</a></div>
+            </div>
+            <div class="field">
+                <input type="submit" value="Login">
+            </div>
+
+            <div class="signup-link">Not a member?
+                <p class="w-100 text-center"> already have an account? <a href="Registration.html">sign in</a></p>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
