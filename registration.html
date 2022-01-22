@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="jquery-3.6.0.min.js"></script>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script>
+		$(document).ready(function(){
+			$('#form').submit(function(){
+				var FirstName = $('#FirstName').val();
+				var LastName = $('#LastName').val();
+				var Username = $('#Email').val();
+				var Password = $('#Password').val();
+				var ConformPassword = $('#ConformPassword').val();
+				var PhoneNo = $('#PhoneNo').val();
+				var Age = $('#Age').val();
+				var birthdate = $('#birthdate').val();
+				var Country = $('#Country').val();
+				var State = $('#State').val();
+				var city = $('#city').val();
+				var ProfilePic = $('#ProfilePic').val();
+				var note = $('#note').val();
+				
+				if (FirstName == "")
+				 {
+					alert('First Name is required.');
+					return false;
+				}
+				if (LastName == "")
+				 {
+                    alert('Last Name is required.');
+                    return false;
+                }
+				if (Username == "")
+				 {
+                    alert('Please enter Username.');
+                    return false;
+                }
+				var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            if(!regex.test(Username)) {
+                alert("Invalid email ID");
+                return false;
+			}
+			if(Password.length<8){
+                alert("Password must be atleast 8 characters.");
+				return false;
+            }
+			 if(ConformPassword != Password)
+			 {
+				 alert('Password must be same..')
+				 return false;
+			 }
+			 if(PhoneNo.length<10)
+			 {
+				 alert("enter the correct phone number");
+				 return false;
+			 }
+			 if(Age== "")
+			 {
+				 alert("Enter the age");
+				 return false;
+			 }
+			 if(birthdate== "")
+			 {
+				 alert("Enter the birthdate");
+				 return false;
+			 }
+			 if(Country== "")
+			 {
+				 alert("Enter the Country");
+				 return false;
+			 }
+			 if(State== "")
+			 {
+				 alert("Enter the State");
+				 return false;
+			 }
+			 if(city== "")
+			 {
+				 alert("Enter the city");
+				 return false;
+			 }
+			 if(ProfilePic== "")
+			 {
+				 alert("Enter the profile");
+				 return false;
+			 }
+			 
+
+
+			});
+		});
+	</script>
+</head>
+<body style="background: url(chelsi.jpg);">
+	<div class="container">
+	<div class="title">Registeration</div>
+	<form action="#" class="signin-form" id="form">
+			<div class="user-details">
+					<div class="input-box">
+						<span class="details">First Name:</span>
+						<input type="text" placeholder="Enter your name" id="FirstName">
+					</div>
+					<div class="input-box">
+						<span class="details">Last Name:</span>
+						<input type="text" placeholder="Enter your name" id="LastName">
+					</div>
+					<div class="input-box">
+						<span class="details">Username:</span>
+						<input type="text" placeholder="Enter your username" id="Email">
+					</div>
+					<div class="input-box">
+						<span class="details">Password:</span>
+						<input type="password" placeholder="Enter your password" id="Password">
+					</div>
+					<div class="input-box">
+						<span class="details">Confirm Password:</span>
+						<input type="password" placeholder="Re enter the password" id="ConformPassword">
+					</div>
+					<div class="input-box">
+						<span class="details">Phone No:</span>
+						<input type="number" placeholder="Enter your PhoneNo" id="PhoneNo" >
+					</div>
+					<div class="input-box">
+						<span class="details">Age:</span>
+						<input type="number" placeholder="Enter your Age" id="Age" >
+					</div>
+					<div class="input-box">
+						<span class="details">birthdate:</span>
+						<input type="date" placeholder="Enter your birthdate" id="birthdate" >
+					</div>
+					<div class="input-box">
+						<span class="details">country:</span>
+						<input type="text" placeholder="Enter your country" id="Country" >
+					</div>
+					<div class="input-box">
+						<span class="details">State:</span>
+						<input type="text" placeholder="Enter your State" id="State" >
+					</div>
+					<div class="input-box">
+						<span class="details">city:</span>
+						<input type="text" placeholder="Enter your city" id="city" >
+					</div>
+					<div class="input-box">
+						<span class="details">ProfilePic:</span>
+						<input type="file" placeholder="Please upload your profile picture" id="ProfilePic" >
+					</div>
+					<div class="input-box">
+						<span class="details">Note:</span>
+						<input type="text" placeholder="Enter your note" id="Note" >
+					</div>
+				</div>
+				<div class="gender-details">
+					<input type="radio" name="gender" id="dot-1">
+					<input type="radio" name="gender" id="dot-2">
+					<input type="radio" name="gender" id="dot-3">
+					<span class="gender-title">Gender</span>
+					<div class="category">
+					  <label for="dot-1">
+					  <span class="dot one"></span>
+					  <span class="gender">Male</span>
+					</label>
+					<label for="dot-2">
+					  <span class="dot two"></span>
+					  <span class="gender">Female</span>
+					</label>
+					<label for="dot-3">
+					  <span class="dot three"></span>
+					  <span class="gender">Prefer not to say</span>
+					  </label>
+					</div>
+				  </div>
+				 
+				<div class="button">
+					<input type="submit" value="Register">      
+				</div>
+				<p class="w-100 text-center"> already have an account? <a href="login.html" >sign in</a> </p>
+			</div>
+         </div>
+		</form>
+	</form>
+	</div>
+</body>
+<link rel="stylesheet" href="reg.css">
+</html>
